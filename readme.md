@@ -38,8 +38,10 @@ npm install
 This project uses a `.env` file. Example:  
 
 ``` ini
-NODE_ENV=development
-PORT=3000
+PORT=8080
+NODE_ENV=dev
+LOG_LEVEL=debug
+SERVICE_NAME=service-name
 APP_VERSION=v1
 ```
 

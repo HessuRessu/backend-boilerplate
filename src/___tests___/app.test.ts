@@ -1,9 +1,12 @@
 import request from 'supertest';
-import app from '../app';
+import createApp from "../app";
+
+const appVersion = process.env.APP_VERSION || "v0";
 
 describe('GET /health', () => {
   it('returns ok', async () => {
-    const res = await request(app).get('/health');
+    const app = createApp();
+    const res = await request(app).get(`/api/${appVersion}/health`);
     expect(res.status).toBe(200);
     expect(res.body).toEqual({ status: 'ok' });
   });
