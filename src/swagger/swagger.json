@@ -10,7 +10,7 @@
 		"securitySchemes": {}
 	},
 	"info": {
-		"title": "ai-conversation-api",
+		"title": "rest-boilerplate",
 		"version": "0.0.1",
 		"license": {
 			"name": "ISC"
@@ -23,16 +23,25 @@
 				"operationId": "GetHealth",
 				"responses": {
 					"200": {
-						"description": "Ok",
+						"description": ": string} JSON-object indicating service status.",
 						"content": {
 							"application/json": {
 								"schema": {
 									"properties": {
+										"date": {
+											"type": "string",
+											"format": "date-time"
+										},
+										"version": {
+											"type": "string"
+										},
 										"status": {
 											"type": "string"
 										}
 									},
 									"required": [
+										"date",
+										"version",
 										"status"
 									],
 									"type": "object"
@@ -41,6 +50,7 @@
 						}
 					}
 				},
+				"description": "Returns status of the service",
 				"security": [],
 				"parameters": []
 			}
@@ -48,7 +58,7 @@
 	},
 	"servers": [
 		{
-			"url": "/api/v2"
+			"url": "/api/v1"
 		}
 	]
 }

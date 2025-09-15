@@ -10,7 +10,7 @@ export default tseslint.config(
     files: ["src/**/*.ts"],
     languageOptions: {
       parserOptions: {
-        project: "./tsconfig.json", // ota pois jos haluat nopeamman linttauksen
+        project: "./tsconfig.json",
         tsconfigRootDir: import.meta.dirname,
       },
       globals: {

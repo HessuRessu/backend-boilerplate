@@ -17,12 +17,14 @@ export class HealthController extends Controller {
    *
    * @example
    * {
-   *   "status": "ok"
+   *   "status": "ok",
+   *   "version": "v1",
+   *   "date": "2025-09-15"
    * }
    */
     @Get()
-    public async getHealth(): Promise<{status: string}> {
+    public async getHealth(): Promise<{status: string, version: string, date: Date}> {
         this.setStatus(200);
-        return {"status": "ok"};
+        return {"status": "ok", "version": "v1", "date": new Date()};
     }
 }
