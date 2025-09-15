@@ -1,0 +1,17 @@
+name: SAST scan
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [20.x, 21.x, 22.x]
+
+    steps:
+      - uses: AppThreat/sast-scan-action@master
+        with:
+          type: "nodejs"
