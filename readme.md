@@ -3,6 +3,11 @@
 🚀 A modern TypeScript boilerplate for building REST APIs.  
 Includes out-of-the-box setup for **Express**, **TSOA**, **Swagger UI**, **Jest**, **ESLint**, **Docker**, **Compose**, **Typedoc**, and a **logger**.  
 
+  ![Build Status](https://github.com/HessuRessu/rest-boilerplate/actions/workflows/build-test.yml/badge.svg)
+  ![SAST Scan](https://github.com/HessuRessu/rest-boilerplate/actions/workflows/sast-scan.yml/badge.svg)
+  ![Docker publish](https://github.com/HessuRessu/rest-boilerplate/actions/workflows/docker-publish.yml/badge.svg)
+
+
 ---
 
 ## ✨ Features
