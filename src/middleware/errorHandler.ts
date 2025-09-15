@@ -1,35 +1,32 @@
 import { Request, Response, NextFunction } from 'express';
 import logger from '../utils/logger';
 
-export function errorHandler(
-  err: unknown,
-  req: Request,
-  res: Response,
-  next: NextFunction
-): void {
+class ErrorHandler extends Error {
+    statusCode: number;
+    message: string;
 
-   void next;
-
-  let status = 500;
-  let message = 'Internal Server Error';
-
-  if (err instanceof Error) {
-    message = err.message;
-
-    if ((err as any).status && typeof (err as any).status === 'number') {
-      status = (err as any).status;
+    constructor(statusCode: number, message: string) {
+        super();
+        this.statusCode = statusCode;
+        this.message = message;
     }
-  }
-
-  logger.error({
-    path: req.path,
-    method: req.method,
-    error: message,
-    stack: err instanceof Error ? err.stack : undefined,
-  }, 'Unhandled error');
-
-  res.status(status).json({
-    success: false,
-    message,
-  });
 }
+
+const handleError = (err: ErrorHandler, req: Request, res: Response, next: NextFunction) => {
+    const { statusCode, message } = err;
+    void next;
+    logger.error({
+        path: req.path,
+        method: req.method,
+        error: message,
+        stack: err instanceof Error ? err.stack : undefined,
+    }, 'Unhandled error');
+
+    res.status(statusCode).json({
+        status: 'error',
+        statusCode,
+        message,
+    });
+};
+
+export { ErrorHandler, handleError };
