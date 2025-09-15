@@ -119,7 +119,9 @@ docker-compose up --build
 .
 ├── src/
 │   ├── controllers/      # TSOA controllers
+│   ├── middleware/       # Middleware handlers
 │   ├── routes/           # Generated routes
+│   ├── utils/            # Utility modules
 │   ├── app.ts            # Express app initialization
 │   └── index.ts          # Entry point
 ├── scripts/              # Helper scripts (e.g., TSOA basePath)
