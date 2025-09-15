@@ -146,10 +146,8 @@ docker-compose up --build
 
 ## 🚧 Roadmap / suggestions
 
-- [ ] Add CI/CD workflow (GitHub Actions: lint + test + build)  
 - [ ] Add request validation (e.g. Zod / class-validator)  
 - [ ] Add production-grade security middleware (helmet, rate limiter)  
-- [ ] Add examples for multiple API versions side by side  
 
 ---
 
