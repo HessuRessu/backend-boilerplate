@@ -13,7 +13,7 @@ export class HealthController extends Controller {
    /**
    * Returns status of the service
    *
-   * @returns {"status": string} JSON-object indicating service status.
+   * @returns {"status": string, "version": string, "date": Date} JSON-object indicating service status.
    *
    * @example
    * {
@@ -27,4 +27,5 @@ export class HealthController extends Controller {
         this.setStatus(200);
         return {"status": "ok", "version": "v1", "date": new Date()};
     }
+
 }

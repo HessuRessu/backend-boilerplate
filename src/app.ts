@@ -8,8 +8,9 @@ import { RegisterRoutes } from "./routes/routes";
 import swaggerUi from 'swagger-ui-express';
 import swaggerDocument from './swagger/swagger.json';
 
-import { handleError } from "./middleware/ErrorHandler";
+import { handleError } from "./middleware/errorHandler";
 import { requestLogger } from "./middleware/requestLogger";
+import { requestMetrics } from './middleware/requestMetrics';
 
 
 /**
@@ -31,6 +32,7 @@ export default function createApp(): express.Express {
     app.use(cors());
     app.use(requestLogger);
     app.use(handleError);
+    app.use(requestMetrics)
 
     app.use(`${basePath}/docs`, swaggerUi.serve, swaggerUi.setup(swaggerDocument));
     RegisterRoutes(router);

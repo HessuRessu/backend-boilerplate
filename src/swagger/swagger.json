@@ -18,12 +18,40 @@
 		"contact": {}
 	},
 	"paths": {
+		"/metrics": {
+			"get": {
+				"operationId": "GetMetrics",
+				"responses": {
+					"200": {
+						"description": "Ok",
+						"content": {
+							"application/json": {
+								"schema": {
+									"type": "string"
+								},
+								"examples": {
+									"Example 1": {
+										"value": "# HELP http_requests_total Total number of HTTP requests\n# TYPE http_requests_total counter\nhttp_requests_total{method=\"GET\",route=\"/api/health\",status=\"200\"} 5"
+									}
+								}
+							}
+						}
+					}
+				},
+				"description": "Returns metrics of the service",
+				"tags": [
+					"Monitoring"
+				],
+				"security": [],
+				"parameters": []
+			}
+		},
 		"/health": {
 			"get": {
 				"operationId": "GetHealth",
 				"responses": {
 					"200": {
-						"description": ": string} JSON-object indicating service status.",
+						"description": ": string, \"version\": string, \"date\": Date} JSON-object indicating service status.",
 						"content": {
 							"application/json": {
 								"schema": {
