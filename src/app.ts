@@ -2,6 +2,7 @@
 
 import express from "express";
 import cors from "cors";
+import helmet from "helmet";
 
 import { RegisterRoutes } from "./routes/routes";
 
@@ -30,6 +31,7 @@ export default function createApp(): express.Express {
 
     app.use(express.json());
     app.use(cors());
+    app.use(helmet());
     app.use(requestLogger);
     app.use(handleError);
     app.use(requestMetrics)
