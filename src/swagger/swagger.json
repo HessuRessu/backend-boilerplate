@@ -6,7 +6,29 @@
 		"parameters": {},
 		"requestBodies": {},
 		"responses": {},
-		"schemas": {},
+		"schemas": {
+			"IHealthMessage": {
+				"properties": {
+					"status": {
+						"type": "string"
+					},
+					"version": {
+						"type": "string"
+					},
+					"date": {
+						"type": "string",
+						"format": "date-time"
+					}
+				},
+				"required": [
+					"status",
+					"version",
+					"date"
+				],
+				"type": "object",
+				"additionalProperties": true
+			}
+		},
 		"securitySchemes": {}
 	},
 	"info": {
@@ -55,24 +77,7 @@
 						"content": {
 							"application/json": {
 								"schema": {
-									"properties": {
-										"date": {
-											"type": "string",
-											"format": "date-time"
-										},
-										"version": {
-											"type": "string"
-										},
-										"status": {
-											"type": "string"
-										}
-									},
-									"required": [
-										"date",
-										"version",
-										"status"
-									],
-									"type": "object"
+									"$ref": "#/components/schemas/IHealthMessage"
 								}
 							}
 						}

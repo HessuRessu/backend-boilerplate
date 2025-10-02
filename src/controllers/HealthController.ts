@@ -1,6 +1,7 @@
 "use strict";
 
-import { Controller, Get, Route, Tags } from "tsoa";
+import { Controller, Get, Response, Route, Tags } from "tsoa";
+import { IHealthMessage } from "../types";
 
 /**
  * Health check controller
@@ -24,7 +25,12 @@ export class HealthController extends Controller {
    * }
    */
     @Get()
-    public async getHealth(): Promise<{status: string, version: string, date: Date}> {
+    @Response<IHealthMessage>(200, "ok", {
+        status: "ok", 
+        version: "v1", 
+        date: new Date()
+    })
+    public async getHealth(): Promise<IHealthMessage> {
         this.setStatus(200);
         return {"status": "ok", "version": "v1", "date": new Date()};
     }

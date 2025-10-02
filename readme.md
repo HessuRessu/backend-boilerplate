@@ -140,7 +140,8 @@ docker-compose up --build
 │   ├── routes/           # Generated routes
 │   ├── utils/            # Utility modules
 │   ├── app.ts            # Express app initialization
-│   └── index.ts          # Entry point
+│   ├── index.ts          # Entry point
+│   └── types.ts          # Type definitions (interfaces)
 ├── scripts/              # Helper scripts (e.g., TSOA basePath)
 ├── swagger/              # Generated swagger specs
 ├── tests/                # Tests
