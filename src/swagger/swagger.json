@@ -79,6 +79,9 @@
 					}
 				},
 				"description": "Returns status of the service",
+				"tags": [
+					"Monitoring"
+				],
 				"security": [],
 				"parameters": []
 			}

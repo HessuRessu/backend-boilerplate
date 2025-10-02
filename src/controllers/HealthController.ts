@@ -1,6 +1,6 @@
 "use strict";
 
-import { Controller, Get, Route } from "tsoa";
+import { Controller, Get, Route, Tags } from "tsoa";
 
 /**
  * Health check controller
@@ -8,6 +8,7 @@ import { Controller, Get, Route } from "tsoa";
  * Exposes endpoint for checking service health.
  */
 @Route("health")
+@Tags("Monitoring")
 export class HealthController extends Controller {
 
    /**
