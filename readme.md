@@ -135,6 +135,7 @@ docker-compose up --build
 ``` text
 .
 ├── src/
+│   ├── ___tests___/      # Unit tests
 │   ├── controllers/      # TSOA controllers
 │   ├── middleware/       # Middleware handlers
 │   ├── routes/           # Generated routes
@@ -144,7 +145,6 @@ docker-compose up --build
 │   └── types.ts          # Type definitions (interfaces)
 ├── scripts/              # Helper scripts (e.g., TSOA basePath)
 ├── swagger/              # Generated swagger specs
-├── tests/                # Tests
 ├── Dockerfile
 ├── docker-compose.yml
 ├── tsoa.json             # TSOA configuration
